@@ -209,6 +209,17 @@ options:
             - Currently supported on Linux, FreeBSD, DragonFlyBSD, NetBSD, OpenBSD.
         type: bool
         version_added: "2.6"
+        example:
+              - name: create user
+                user:
+                  name: test123
+                  comment: test user
+                  uid: 1100
+                  group: users
+                  shell: /bin/bash
+                  password_lock: on_create
+                  update_password: on_create
+                  state: present
     local:
         description:
             - Forces the use of "local" command alternatives on platforms that implement it.
